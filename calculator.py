@@ -112,7 +112,9 @@ def sendEmail():
                 msg.set_content("Your CGPA for the semester is " + str(dict['cgpa']) + ". Your break down of grades is:  \n\n" + gradeList )
 
                 smtp.send_message(msg)
+                print("Your final cgpa is: ",str(dict['cgpa']))
                 print("Successfully sent email.")
+                print("see you in next semester!!")
         except SMTPException:
             print("Error: unable to send email")
     else:
@@ -136,11 +138,11 @@ def sendEmail():
         except SMTPException:
             print("Error: unable to send email")
     
-    time.sleep(Time_Interval)
-    now = datetime.now()
-    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-    print('[' + dt_string + ']: '+'Trying again')
-    sendEmail()
+        time.sleep(Time_Interval)
+        now = datetime.now()
+        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+        print('[' + dt_string + ']: '+'Trying again')
+        sendEmail()
 
 
 
