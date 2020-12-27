@@ -88,6 +88,7 @@ def getCgpa(cookie,acadPeriodId):
     return grades
 
 def sendEmail():
+    print('Starting')
     dict = getCgpa(cookie,acadPeriodId)
     if(dict['sendEmail'] == False):
         time.sleep(Time_Interval)
