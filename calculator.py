@@ -71,7 +71,7 @@ def getCgpa(cookie,acadPeriodId):
 
 
     global prevCount
-    if totalCourses == currCount :
+    if totalCourses == currCount and totalCredits != 0:
         grades['sendEmail'] = True
         grades['cgpa'] = points/totalCredits
         grades['isFinal'] = True
